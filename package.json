@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/pushrocks/smartparam/issues"
   },
-  "homepage": "https://github.com/pushrocks/smartparam"
+  "homepage": "https://github.com/pushrocks/smartparam",
+  "dependencies": {
+    "beautylog": "latest"
+  }
 }
