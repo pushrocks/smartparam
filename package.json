@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
-    "beautylog": "latest"
+    "beautylog": "0.0.12"
   }
 }
