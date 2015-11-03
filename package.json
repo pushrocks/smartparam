@@ -23,11 +23,15 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
+<<<<<<< HEAD
     "beautylog": "1.0.2"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.9.2",
     "pushrocks": "^1.0.19"
+=======
+    "beautylog": "0.0.15"
+>>>>>>> 4bae4c109ff645e4e67cfed96bfe0e36db150ddf
   }
 }
