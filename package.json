@@ -4,7 +4,7 @@
   "description": "smart ways to handle params",
   "main": "index.js",
   "scripts": {
-    "test": "cd ts/compile && gulp"
+    "test": "(cd ts/compile && node compile.js)"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
-    "beautylog": "latest"
+    "beautylog": "1.0.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.2",
+    "pushrocks": "^1.0.19"
   }
 }

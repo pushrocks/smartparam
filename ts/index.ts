@@ -1,5 +1,5 @@
 /// <reference path="typings/tsd.d.ts" />
-var bl = require("beautylog");
+var bl = require("beautylog")("os");
 
 /**
  * takes a parent object and a child object and adds it in smart ways.
@@ -18,6 +18,12 @@ module.exports = (parentObject,childParam:string,action:string = 'smartAdd',logB
             if(logBool) bl.log('param does not exist, so we make it!');
             parentObject[childParam] = {}
             return true;
+        }
+    } else if (action = "exists") {
+        if (parentObject == "global") {
+            return (typeof childParam == "undefined");
+        } else {
+            return (typeof parentObject.childObject == "undefined");
         }
     }
 };
