@@ -1,6 +1,6 @@
 {
   "name": "smartparam",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "smart ways to handle params",
   "main": "index.js",
   "scripts": {
