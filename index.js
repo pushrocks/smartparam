@@ -8,28 +8,37 @@ var bl = require("beautylog")("os");
  * @param logBool {boolean} turns on logging
  * @returns {boolean} return true if something changes (like param is added), returns false in case nothing changes
  */
-module.exports = function (parentObject, childParam, action, logBool) {
-    if (action === void 0) { action = 'smartAdd'; }
-    if (logBool === void 0) { logBool = false; }
-    if (action = 'smartAdd') {
-        if (parentObject.hasOwnProperty(childParam)) {
-            if (logBool)
-                bl.log("param " + childParam + " exists! Nothing changes!");
-            return false;
-        }
-        else {
-            if (logBool)
-                bl.log('param does not exist, so we make it!');
-            parentObject[childParam] = {};
-            return true;
-        }
+var smartparam = {};
+/**
+ * adds an obejct to the parent object if it doesn't exists
+ * @param parentObject
+ * @param childParam
+ * @param logBool
+ * @returns {boolean}
+ */
+smartparam.smartAdd = function (parentObject, childParam, logBool) {
+    if (parentObject.hasOwnProperty(childParam)) {
+        if (logBool)
+            bl.log("param " + childParam + " exists! Nothing changes!");
+        return false;
     }
-    else if (action = "exists") {
-        if (parentObject == "global") {
-            return (typeof childParam == "undefined");
-        }
-        else {
-            return (typeof parentObject.childObject == "undefined");
-        }
+    else {
+        if (logBool)
+            bl.log('param does not exist, so we make it!');
+        parentObject[childParam] = {};
+        return true;
     }
 };
+/**
+ * checks if in object has a parameter with a given key name, returns true if yes.
+ * @param parentObject
+ * @param childParam
+ * @returns {boolean}
+ */
+smartparam.exists = function (parentObject, childParam) {
+    if (parentObject.hasOwnProperty(childParam)) {
+        return true;
+    }
+    return false;
+};
+module.exports = smartparam;
