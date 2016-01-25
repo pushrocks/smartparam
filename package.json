@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
-    "beautylog": "1.0.2"
+    "beautylog": "2.0.3"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
