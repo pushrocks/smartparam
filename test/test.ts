@@ -1,4 +1,4 @@
-/// <reference path="typings/tsd.d.ts" />
+/// <reference path="../ts/typings/main.d.ts" />
 var smartparam = require("./index.js");
 var bl = require("beautylog")("os");
 
