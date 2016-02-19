@@ -1,0 +1,40 @@
+/**
+ * takes a parent object and a child object and adds it in smart ways.
+ * @param parentObject parent Object
+ * @param childParam child object to add
+ * @param action defines the way in which the param is added
+ * @param logBool {boolean} turns on logging
+ * @returns {boolean} return true if something changes (like param is added), returns false in case nothing changes
+ */
+var smartparam = {};
+/**
+ * adds an obejct to the parent object if it doesn't exists
+ * @param parentObject
+ * @param childParam
+ * @param logBool
+ * @returns {boolean}
+ */
+smartparam.smartAdd = function (parentObject, childParam) {
+    if (parentObject.hasOwnProperty(childParam)) {
+        return false;
+    }
+    else {
+        parentObject[childParam] = {};
+        return true;
+    }
+};
+/**
+ * checks if in object has a parameter with a given key name, returns true if yes.
+ * @param parentObject
+ * @param childParam
+ * @returns {boolean}
+ */
+smartparam.exists = function (parentObject, childParam) {
+    if (parentObject.hasOwnProperty(childParam)) {
+        return true;
+    }
+    return false;
+};
+module.exports = smartparam;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBOzs7Ozs7O0dBT0c7QUFFSCxJQUFJLFVBQVUsR0FBTyxFQUFFLENBQUM7QUFFeEI7Ozs7OztHQU1HO0FBQ0gsVUFBVSxDQUFDLFFBQVEsR0FBRyxVQUFVLFlBQVksRUFBQyxVQUFpQjtJQUMxRCxFQUFFLENBQUEsQ0FBQyxZQUFZLENBQUMsY0FBYyxDQUFDLFVBQVUsQ0FBQyxDQUFDLENBQUEsQ0FBQztRQUN4QyxNQUFNLENBQUMsS0FBSyxDQUFDO0lBQ2pCLENBQUM7SUFBQyxJQUFJLENBQUMsQ0FBQztRQUNKLFlBQVksQ0FBQyxVQUFVLENBQUMsR0FBRyxFQUFFLENBQUE7UUFDN0IsTUFBTSxDQUFDLElBQUksQ0FBQztJQUNoQixDQUFDO0FBQ0wsQ0FBQyxDQUFDO0FBRUY7Ozs7O0dBS0c7QUFDSCxVQUFVLENBQUMsTUFBTSxHQUFHLFVBQVMsWUFBWSxFQUFDLFVBQWlCO0lBQ3ZELEVBQUUsQ0FBQyxDQUFDLFlBQVksQ0FBQyxjQUFjLENBQUMsVUFBVSxDQUFDLENBQUMsQ0FBQyxDQUFDO1FBQzFDLE1BQU0sQ0FBQyxJQUFJLENBQUM7SUFDaEIsQ0FBQztJQUNELE1BQU0sQ0FBQyxLQUFLLENBQUM7QUFDakIsQ0FBQyxDQUFDO0FBRUYsaUJBQVMsVUFBVSxDQUFDIiwiZmlsZSI6ImluZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8vIDxyZWZlcmVuY2UgcGF0aD1cInR5cGluZ3MvbWFpbi5kLnRzXCIgLz5cbmltcG9ydCBwbHVnaW5zID0gcmVxdWlyZShcIi4vc21hcnRwYXJhbS5wbHVnaW5zXCIpO1xuXG4vKipcbiAqIHRha2VzIGEgcGFyZW50IG9iamVjdCBhbmQgYSBjaGlsZCBvYmplY3QgYW5kIGFkZHMgaXQgaW4gc21hcnQgd2F5cy5cbiAqIEBwYXJhbSBwYXJlbnRPYmplY3QgcGFyZW50IE9iamVjdFxuICogQHBhcmFtIGNoaWxkUGFyYW0gY2hpbGQgb2JqZWN0IHRvIGFkZFxuICogQHBhcmFtIGFjdGlvbiBkZWZpbmVzIHRoZSB3YXkgaW4gd2hpY2ggdGhlIHBhcmFtIGlzIGFkZGVkXG4gKiBAcGFyYW0gbG9nQm9vbCB7Ym9vbGVhbn0gdHVybnMgb24gbG9nZ2luZ1xuICogQHJldHVybnMge2Jvb2xlYW59IHJldHVybiB0cnVlIGlmIHNvbWV0aGluZyBjaGFuZ2VzIChsaWtlIHBhcmFtIGlzIGFkZGVkKSwgcmV0dXJucyBmYWxzZSBpbiBjYXNlIG5vdGhpbmcgY2hhbmdlc1xuICovXG5cbnZhciBzbWFydHBhcmFtOmFueSA9IHt9O1xuXG4vKipcbiAqIGFkZHMgYW4gb2JlamN0IHRvIHRoZSBwYXJlbnQgb2JqZWN0IGlmIGl0IGRvZXNuJ3QgZXhpc3RzXG4gKiBAcGFyYW0gcGFyZW50T2JqZWN0XG4gKiBAcGFyYW0gY2hpbGRQYXJhbVxuICogQHBhcmFtIGxvZ0Jvb2xcbiAqIEByZXR1cm5zIHtib29sZWFufVxuICovXG5zbWFydHBhcmFtLnNtYXJ0QWRkID0gZnVuY3Rpb24gKHBhcmVudE9iamVjdCxjaGlsZFBhcmFtOnN0cmluZyk6Ym9vbGVhbiB7XG4gICAgaWYocGFyZW50T2JqZWN0Lmhhc093blByb3BlcnR5KGNoaWxkUGFyYW0pKXtcbiAgICAgICAgcmV0dXJuIGZhbHNlO1xuICAgIH0gZWxzZSB7XG4gICAgICAgIHBhcmVudE9iamVjdFtjaGlsZFBhcmFtXSA9IHt9XG4gICAgICAgIHJldHVybiB0cnVlO1xuICAgIH1cbn07XG5cbi8qKlxuICogY2hlY2tzIGlmIGluIG9iamVjdCBoYXMgYSBwYXJhbWV0ZXIgd2l0aCBhIGdpdmVuIGtleSBuYW1lLCByZXR1cm5zIHRydWUgaWYgeWVzLlxuICogQHBhcmFtIHBhcmVudE9iamVjdFxuICogQHBhcmFtIGNoaWxkUGFyYW1cbiAqIEByZXR1cm5zIHtib29sZWFufVxuICovXG5zbWFydHBhcmFtLmV4aXN0cyA9IGZ1bmN0aW9uKHBhcmVudE9iamVjdCxjaGlsZFBhcmFtOnN0cmluZyk6Ym9vbGVhbiB7XG4gICAgaWYgKHBhcmVudE9iamVjdC5oYXNPd25Qcm9wZXJ0eShjaGlsZFBhcmFtKSkge1xuICAgICAgICByZXR1cm4gdHJ1ZTtcbiAgICB9XG4gICAgcmV0dXJuIGZhbHNlO1xufTtcblxuZXhwb3J0ID0gc21hcnRwYXJhbTsiXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

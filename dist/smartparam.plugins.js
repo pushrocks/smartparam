@@ -1,0 +1,9 @@
+/// <reference path="typings/main.d.ts" />
+var plugins = {
+    beautylog: require("beautylog"),
+    isPromise: require("is-promise"),
+    Q: require("q")
+};
+module.exports = plugins;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNtYXJ0cGFyYW0ucGx1Z2lucy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSwwQ0FBMEM7QUFDMUMsSUFBSSxPQUFPLEdBQUc7SUFDVixTQUFTLEVBQUUsT0FBTyxDQUFDLFdBQVcsQ0FBQztJQUMvQixTQUFTLEVBQUUsT0FBTyxDQUFDLFlBQVksQ0FBQztJQUNoQyxDQUFDLEVBQUUsT0FBTyxDQUFDLEdBQUcsQ0FBQztDQUNsQixDQUFDO0FBQ0YsaUJBQVMsT0FBTyxDQUFDIiwiZmlsZSI6InNtYXJ0cGFyYW0ucGx1Z2lucy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vLyA8cmVmZXJlbmNlIHBhdGg9XCJ0eXBpbmdzL21haW4uZC50c1wiIC8+XG52YXIgcGx1Z2lucyA9IHtcbiAgICBiZWF1dHlsb2c6IHJlcXVpcmUoXCJiZWF1dHlsb2dcIiksXG4gICAgaXNQcm9taXNlOiByZXF1aXJlKFwiaXMtcHJvbWlzZVwiKSxcbiAgICBROiByZXF1aXJlKFwicVwiKVxufTtcbmV4cG9ydCA9IHBsdWdpbnM7Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

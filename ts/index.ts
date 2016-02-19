@@ -1,5 +1,5 @@
 /// <reference path="typings/main.d.ts" />
-var bl = require("beautylog")("os");
+import plugins = require("./smartparam.plugins");
 
 /**
  * takes a parent object and a child object and adds it in smart ways.
@@ -19,12 +19,10 @@ var smartparam:any = {};
  * @param logBool
  * @returns {boolean}
  */
-smartparam.smartAdd = function (parentObject,childParam:string,logBool:boolean):boolean {
+smartparam.smartAdd = function (parentObject,childParam:string):boolean {
     if(parentObject.hasOwnProperty(childParam)){
-        if(logBool) bl.log("param " + childParam + " exists! Nothing changes!");
         return false;
     } else {
-        if(logBool) bl.log('param does not exist, so we make it!');
         parentObject[childParam] = {}
         return true;
     }
@@ -43,4 +41,4 @@ smartparam.exists = function(parentObject,childParam:string):boolean {
     return false;
 };
 
-module.exports = smartparam;
+export = smartparam;
