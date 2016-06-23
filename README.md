@@ -2,7 +2,7 @@
 offers smart ways to handle params.
 
 ## Status
-[![Build Status](https://travis-ci.org/pushrocks/smartparam.svg?branch=master)](https://travis-ci.org/pushrocks/smartparam)
+[![build status](https://gitlab.com/pushrocks/smartparam/badges/master/build.svg)](https://gitlab.com/pushrocks/smartparam/commits/master)
 [![Dependency Status](https://david-dm.org/pushrocks/smartparam.svg)](https://david-dm.org/pushrocks/smartparam)
 [![bitHound Dependencies](https://www.bithound.io/github/pushrocks/smartparam/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/smartparam/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/pushrocks/smartparam/badges/code.svg)](https://www.bithound.io/github/pushrocks/smartparam)
