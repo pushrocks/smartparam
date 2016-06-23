@@ -3,6 +3,7 @@
   "version": "0.0.7",
   "description": "smart ways to handle params",
   "main": "dist/index.js",
+  "typings":"dist/index.d.ts",
   "scripts": {
     "test": "(npmts)"
   },
@@ -22,14 +23,15 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
-    "beautylog": "2.1.1",
+    "beautylog": "5.0.12",
     "is-promise": "^2.1.0",
-    "q": "^1.4.1"
+    "minimatch": "^3.0.2",
+    "q": "^1.4.1",
+    "typings-global": "^1.0.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^2.11.0",
-    "npmts": "^3.1.2",
-    "should": "^8.2.2"
+    "npmts-g": "^5.2.6",
+    "should": "^9.0.2",
+    "typings-test": "^1.0.1"
   }
 }

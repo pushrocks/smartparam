@@ -1,10 +1,10 @@
-/// <reference path="../ts/typings/main.d.ts" />
-var smartparam = require("../dist/index.js");
-var should = require("should");
+import "typings-test";
+import smartparam = require("../dist/index");
+import "should";
 //construct test objects
 
-var parentObject:any = {};
-var childObject:any = {};
+let parentObject:any = {};
+let childObject:any = {};
 
 describe("smartparam",function(){
     describe(".exists()",function(){
@@ -16,4 +16,16 @@ describe("smartparam",function(){
             (smartparam.exists(parentObject,"childObject")).should.be.true();
         });
     });
+    describe(".forEachMinimatch",function(){
+        it("should call properties for minimatched properties",function(){
+            let testObject = {
+                matchedOne: "Hey!",
+                matchedTwo: "this works!",
+                notmatched: "NOT!"
+            }
+            smartparam.forEachMinimatch(testObject,"matched*",(matchedProperty)=>{
+                console.log(matchedProperty);
+            });
+        })
+    })
 });

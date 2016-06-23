@@ -1,16 +1,6 @@
-/// <reference path="typings/main.d.ts" />
+import "typings-global";
 import plugins = require("./smartparam.plugins");
 
-/**
- * takes a parent object and a child object and adds it in smart ways.
- * @param parentObject parent Object
- * @param childParam child object to add
- * @param action defines the way in which the param is added
- * @param logBool {boolean} turns on logging
- * @returns {boolean} return true if something changes (like param is added), returns false in case nothing changes
- */
-
-var smartparam:any = {};
 
 /**
  * adds an obejct to the parent object if it doesn't exists
@@ -19,7 +9,7 @@ var smartparam:any = {};
  * @param logBool
  * @returns {boolean}
  */
-smartparam.smartAdd = function (parentObject,childParam:string):boolean {
+export let smartAdd = function (parentObject,childParam:string):boolean {
     if(parentObject.hasOwnProperty(childParam)){
         return false;
     } else {
@@ -34,11 +24,19 @@ smartparam.smartAdd = function (parentObject,childParam:string):boolean {
  * @param childParam
  * @returns {boolean}
  */
-smartparam.exists = function(parentObject,childParam:string):boolean {
+export let exists = function(parentObject,childParam:string):boolean {
     if (parentObject.hasOwnProperty(childParam)) {
         return true;
     }
     return false;
 };
 
-export = smartparam;
+export let forEachMinimatch = (parentObjectArg:any,wildcardArg:string,callbackArg) => {
+    let propertyNames = Object.getOwnPropertyNames(parentObjectArg);
+    let propertyNamesMatched = propertyNames.filter((propertyNameArg) => {
+        return plugins.minimatch(propertyNameArg,wildcardArg);
+    });
+    propertyNamesMatched.forEach((propertyNameArg) => {
+        callbackArg(parentObjectArg[propertyNameArg]);
+    });
+};

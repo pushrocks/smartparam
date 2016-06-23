@@ -1,7 +1,5 @@
-/// <reference path="typings/main.d.ts" />
-var plugins = {
-    beautylog: require("beautylog"),
-    isPromise: require("is-promise"),
-    Q: require("q")
-};
-export = plugins;
+import "typings-global";
+export import beautylog = require("beautylog");
+export let isPromise = require("is-promise");
+export let minimatch = require("minimatch");
+export let Q = require("q");
