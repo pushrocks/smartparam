@@ -1,9 +1,9 @@
 {
   "name": "smartparam",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "smart ways to handle params",
   "main": "dist/index.js",
-  "typings":"dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "(npmts)"
   },
