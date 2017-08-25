@@ -1,31 +1,28 @@
-import "typings-test";
-import smartparam = require("../dist/index");
-import "should";
+import { tap, expect } from 'tapbundle'
+import smartparam = require("../ts/index");
 //construct test objects
 
-let parentObject:any = {};
-let childObject:any = {};
+let parentObject: any = {};
+let childObject: any = {};
 
-describe("smartparam",function(){
-    describe(".exists()",function(){
-        it("childObject should not yet be in parentObject",function(){
-            (smartparam.exists(parentObject,"childObject")).should.be.false();
-            parentObject.childObject = childObject;
-        });
-        it("childObject should now BE in parentObject",function(){
-            (smartparam.exists(parentObject,"childObject")).should.be.true();
-        });
-    });
-    describe(".forEachMinimatch",function(){
-        it("should call properties for minimatched properties",function(){
-            let testObject = {
-                matchedOne: "Hey!",
-                matchedTwo: "this works!",
-                notmatched: "NOT!"
-            }
-            smartparam.forEachMinimatch(testObject,"matched*",(matchedProperty)=>{
-                console.log(matchedProperty);
-            });
-        })
-    })
+tap.test("childObject should not yet be in parentObject", async () => {
+    expect(smartparam.exists(parentObject, "childObject")).to.be.false;
+    parentObject.childObject = childObject;
 });
+
+tap.test("childObject should now BE in parentObject", async () => {
+    expect(smartparam.exists(parentObject, "childObject")).to.be.true;
+});
+
+tap.test("should call properties for minimatched properties", async () => {
+    let testObject = {
+        matchedOne: "Hey!",
+        matchedTwo: "this works!",
+        notmatched: "NOT!"
+    }
+    await smartparam.forEachMinimatch(testObject, "matched*", (matchedProperty) => {
+        console.log(matchedProperty);
+    });
+})
+
+tap.start()

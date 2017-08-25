@@ -1,5 +1,12 @@
 import "typings-global";
-export import beautylog = require("beautylog");
-export let isPromise = require("is-promise");
-export let minimatch = require("minimatch");
-export let Q = require("q");
+import * as beautylog from 'beautylog'
+import isPromise = require("is-promise")
+import minimatch = require('minimatch')
+import * as smartq from 'smartq'
+
+export {
+  beautylog,
+  isPromise,
+  minimatch,
+  smartq
+}

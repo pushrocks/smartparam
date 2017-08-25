@@ -1,8 +1,12 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 require("typings-global");
-exports.beautylog = require("beautylog");
-exports.isPromise = require("is-promise");
-exports.minimatch = require("minimatch");
-exports.Q = require("q");
-
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNtYXJ0cGFyYW0ucGx1Z2lucy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsUUFBTyxnQkFBZ0IsQ0FBQyxDQUFBO0FBQ1YsaUJBQVMsV0FBVyxXQUFXLENBQUMsQ0FBQztBQUNwQyxpQkFBUyxHQUFHLE9BQU8sQ0FBQyxZQUFZLENBQUMsQ0FBQztBQUNsQyxpQkFBUyxHQUFHLE9BQU8sQ0FBQyxXQUFXLENBQUMsQ0FBQztBQUNqQyxTQUFDLEdBQUcsT0FBTyxDQUFDLEdBQUcsQ0FBQyxDQUFDIiwiZmlsZSI6InNtYXJ0cGFyYW0ucGx1Z2lucy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcInR5cGluZ3MtZ2xvYmFsXCI7XG5leHBvcnQgaW1wb3J0IGJlYXV0eWxvZyA9IHJlcXVpcmUoXCJiZWF1dHlsb2dcIik7XG5leHBvcnQgbGV0IGlzUHJvbWlzZSA9IHJlcXVpcmUoXCJpcy1wcm9taXNlXCIpO1xuZXhwb3J0IGxldCBtaW5pbWF0Y2ggPSByZXF1aXJlKFwibWluaW1hdGNoXCIpO1xuZXhwb3J0IGxldCBRID0gcmVxdWlyZShcInFcIik7Il19
+const beautylog = require("beautylog");
+exports.beautylog = beautylog;
+const isPromise = require("is-promise");
+exports.isPromise = isPromise;
+const minimatch = require("minimatch");
+exports.minimatch = minimatch;
+const smartq = require("smartq");
+exports.smartq = smartq;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21hcnRwYXJhbS5wbHVnaW5zLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vdHMvc21hcnRwYXJhbS5wbHVnaW5zLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMEJBQXdCO0FBQ3hCLHVDQUFzQztBQU1wQyw4QkFBUztBQUxYLHdDQUF3QztBQU10Qyw4QkFBUztBQUxYLHVDQUF1QztBQU1yQyw4QkFBUztBQUxYLGlDQUFnQztBQU05Qix3QkFBTSJ9

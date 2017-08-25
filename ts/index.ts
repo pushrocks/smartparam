@@ -1,6 +1,4 @@
-import "typings-global";
 import plugins = require("./smartparam.plugins");
-
 
 /**
  * adds an obejct to the parent object if it doesn't exists
@@ -31,12 +29,12 @@ export let exists = function(parentObject,childParam:string):boolean {
     return false;
 };
 
-export let forEachMinimatch = (parentObjectArg:any,wildcardArg:string,callbackArg) => {
+export let forEachMinimatch = async (parentObjectArg:any,wildcardArg:string,callbackArg) => {
     let propertyNames = Object.getOwnPropertyNames(parentObjectArg);
     let propertyNamesMatched = propertyNames.filter((propertyNameArg) => {
         return plugins.minimatch(propertyNameArg,wildcardArg);
     });
-    propertyNamesMatched.forEach((propertyNameArg) => {
-        callbackArg(parentObjectArg[propertyNameArg]);
+    propertyNamesMatched.forEach(async (propertyNameArg) => {
+        await callbackArg(parentObjectArg[propertyNameArg]);
     });
-};
+}
