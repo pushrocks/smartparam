@@ -1,6 +1,6 @@
 {
   "name": "smartparam",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "smart ways to handle params",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
