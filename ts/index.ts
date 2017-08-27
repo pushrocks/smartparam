@@ -7,13 +7,13 @@ import plugins = require("./smartparam.plugins");
  * @param logBool
  * @returns {boolean}
  */
-export let smartAdd = function (parentObject,childParam:string):boolean {
-    if(parentObject.hasOwnProperty(childParam)){
-        return false;
-    } else {
-        parentObject[childParam] = {}
-        return true;
-    }
+export let smartAdd = function (parentObject, childParam: string): boolean {
+  if (parentObject.hasOwnProperty(childParam)) {
+    return false;
+  } else {
+    parentObject[ childParam ] = {}
+    return true;
+  }
 };
 
 /**
@@ -22,19 +22,19 @@ export let smartAdd = function (parentObject,childParam:string):boolean {
  * @param childParam
  * @returns {boolean}
  */
-export let exists = function(parentObject,childParam:string):boolean {
-    if (parentObject.hasOwnProperty(childParam)) {
-        return true;
-    }
-    return false;
+export let exists = function (parentObject, childParam: string): boolean {
+  if (parentObject.hasOwnProperty(childParam)) {
+    return true;
+  }
+  return false;
 };
 
-export let forEachMinimatch = async (parentObjectArg:any,wildcardArg:string,callbackArg) => {
-    let propertyNames = Object.getOwnPropertyNames(parentObjectArg);
-    let propertyNamesMatched = propertyNames.filter((propertyNameArg) => {
-        return plugins.minimatch(propertyNameArg,wildcardArg);
-    });
-    propertyNamesMatched.forEach(async (propertyNameArg) => {
-        await callbackArg(parentObjectArg[propertyNameArg]);
-    });
+export let forEachMinimatch = async (parentObjectArg: any, wildcardArg: string, callbackArg) => {
+  let propertyNames = Object.getOwnPropertyNames(parentObjectArg);
+  let propertyNamesMatched = propertyNames.filter((propertyNameArg) => {
+    return plugins.minimatch(propertyNameArg, wildcardArg);
+  });
+  for (let propertyNameArg of propertyNamesMatched) {
+    await callbackArg(parentObjectArg[ propertyNameArg ]);
+  };
 }
