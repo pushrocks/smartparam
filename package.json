@@ -1,11 +1,13 @@
 {
-  "name": "smartparam",
+  "name": "@pushrocks/smartparam",
   "version": "1.0.2",
+  "private": false,
   "description": "smart ways to handle params",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "(npmts)"
+    "test": "(tstest test/)",
+    "build": "(tsbuild)"
   },
   "repository": {
     "type": "git",
@@ -23,13 +25,15 @@
   },
   "homepage": "https://github.com/pushrocks/smartparam",
   "dependencies": {
-    "beautylog": "6.1.10",
+    "@pushrocks/smartpromise": "^2.0.5",
     "is-promise": "^2.1.0",
-    "minimatch": "^3.0.4",
-    "smartq": "^1.1.6",
-    "typings-global": "^1.0.20"
+    "minimatch": "^3.0.4"
   },
   "devDependencies": {
-    "tapbundle": "^1.1.1"
+    "@gitzone/tsbuild": "^2.0.22",
+    "@gitzone/tsrun": "^1.1.12",
+    "@gitzone/tstest": "^1.0.15",
+    "@pushrocks/tapbundle": "^3.0.7",
+    "@types/node": "^10.9.4"
   }
 }
