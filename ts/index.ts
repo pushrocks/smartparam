@@ -1,4 +1,4 @@
-import plugins = require("./smartparam.plugins");
+import plugins = require('./smartparam.plugins');
 
 /**
  * adds an obejct to the parent object if it doesn't exists
@@ -7,11 +7,11 @@ import plugins = require("./smartparam.plugins");
  * @param logBool
  * @returns {boolean}
  */
-export let smartAdd = function (parentObject, childParam: string): boolean {
+export let smartAdd = function(parentObject, childParam: string): boolean {
   if (parentObject.hasOwnProperty(childParam)) {
     return false;
   } else {
-    parentObject[ childParam ] = {}
+    parentObject[childParam] = {};
     return true;
   }
 };
@@ -22,7 +22,7 @@ export let smartAdd = function (parentObject, childParam: string): boolean {
  * @param childParam
  * @returns {boolean}
  */
-export let exists = function (parentObject, childParam: string): boolean {
+export let exists = function(parentObject, childParam: string): boolean {
   if (parentObject.hasOwnProperty(childParam)) {
     return true;
   }
@@ -37,10 +37,10 @@ export let exists = function (parentObject, childParam: string): boolean {
  */
 export let forEachMinimatch = async (parentObjectArg: any, wildcardArg: string, callbackArg) => {
   let propertyNames = Object.getOwnPropertyNames(parentObjectArg);
-  let propertyNamesMatched = propertyNames.filter((propertyNameArg) => {
+  let propertyNamesMatched = propertyNames.filter(propertyNameArg => {
     return plugins.minimatch(propertyNameArg, wildcardArg);
   });
   for (let propertyNameArg of propertyNamesMatched) {
-    await callbackArg(parentObjectArg[ propertyNameArg ]);
-  };
-}
+    await callbackArg(parentObjectArg[propertyNameArg]);
+  }
+};
