@@ -4,6 +4,14 @@
     "npmAccessLevel": "public"
   },
   "gitzone": {
-    "projectType": "npm"
+    "projectType": "npm",
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "smartparam",
+      "shortDescription": "smart ways to handle parameters of objects",
+      "npmPackagename": "@pushrocks/smartparam",
+      "license": "MIT"
+    }
   }
 }

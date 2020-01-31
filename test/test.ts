@@ -19,7 +19,7 @@ tap.test('should be able to deepAdd an childParam', async () => {
     hello: 'there'
   };
   const parentObject2 = smartparam.smartAdd(parentObject, 'wow.za', 'yes');
-  console.log(parentObject2)
+  console.log(parentObject2);
   expect(smartparam.exists(parentObject2.wow, 'za')).to.be.true;
 });
 

@@ -7,14 +7,18 @@ import plugins = require('./smartparam.plugins');
  * @param logBool
  * @returns {boolean}
  */
-export const smartAdd = (parentObject, childParam: string, valueArg = {}, optionsArg?: {
-  interpretDotsAsLevel: boolean;
-}): typeof parentObject & any => {
-
+export const smartAdd = (
+  parentObject,
+  childParam: string,
+  valueArg = {},
+  optionsArg?: {
+    interpretDotsAsLevel: boolean;
+  }
+): typeof parentObject & any => {
   optionsArg = {
     interpretDotsAsLevel: true,
     ...optionsArg
-  }
+  };
 
   let varNamesArray: string[];
   let referencePointer = parentObject;
@@ -48,25 +52,27 @@ export const smartAdd = (parentObject, childParam: string, valueArg = {}, option
       throw new Error('Something is strange!');
     }
   }
-  return parentObject
+  return parentObject;
 };
 
 /**
  * gets an object from the parent object using dots as levels by default
- * @param parentObject 
- * @param childParam 
- * @param optionsArg 
+ * @param parentObject
+ * @param childParam
+ * @param optionsArg
  */
-export const smartGet = (parentObject, childParam: string, optionsArg?: {
-  interpretDotsAsLevel: boolean;
-}) => {
+export const smartGet = (
+  parentObject,
+  childParam: string,
+  optionsArg?: {
+    interpretDotsAsLevel: boolean;
+  }
+) => {
   optionsArg = {
     interpretDotsAsLevel: true,
     ...optionsArg
-  }
+  };
 };
-
-
 
 /**
  * checks if an object has a parameter with a given key name, returns true if yes.
