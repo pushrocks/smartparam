@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smartparam",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "description": "smart ways to handle params",
   "main": "dist/index.js",
