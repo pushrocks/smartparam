@@ -42,9 +42,16 @@ tap.test('should call properties for minimatched properties', async () => {
     matchedTwo: 'this works!',
     notmatched: 'NOT!'
   };
+
+  const matchedStrings: string[] = [];
   await smartparam.forEachMinimatch(testObject, 'matched*', matchedProperty => {
+    matchedStrings.push(matchedProperty);
     console.log(matchedProperty);
   });
+
+  expect(matchedStrings).to.include('Hey!');
+  expect(matchedStrings).to.include('this works!');
+  expect(matchedStrings).to.not.include('NOT!');
 });
 
 tap.start();
