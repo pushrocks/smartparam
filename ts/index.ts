@@ -20,21 +20,21 @@ export const smartAdd = (
     ...optionsArg
   };
 
-  let varNamesArray: string[];
+  let paramLevels: string[];
   let referencePointer = parentObject;
   if (optionsArg.interpretDotsAsLevel) {
-    varNamesArray = childParam.split('.');
+    paramLevels = childParam.split('.');
   } else {
-    varNamesArray = [childParam];
+    paramLevels = [childParam];
   }
 
-  for (let i = 0; i !== varNamesArray.length; i++) {
-    const varName = varNamesArray[i];
+  for (let i = 0; i !== paramLevels.length; i++) {
+    const varName = paramLevels[i];
 
     // is there a next variable ?
     const varNameNext: string = (() => {
-      if (varNamesArray[i + 1]) {
-        return varNamesArray[i + 1];
+      if (paramLevels[i + 1]) {
+        return paramLevels[i + 1];
       }
       return null;
     })();
@@ -61,17 +61,30 @@ export const smartAdd = (
  * @param childParam
  * @param optionsArg
  */
-export const smartGet = (
+export const smartGet = <T>(
   parentObject,
   childParam: string,
   optionsArg?: {
     interpretDotsAsLevel: boolean;
   }
-) => {
+): T => {
   optionsArg = {
     interpretDotsAsLevel: true,
     ...optionsArg
   };
+
+  let paramLevels: string[];
+  if (optionsArg.interpretDotsAsLevel) {
+    paramLevels = childParam.split('.');
+  } else {
+    paramLevels = [childParam];
+  }
+
+  let referencePointer = parentObject;
+  for (const level of paramLevels) {
+    referencePointer = referencePointer[level];
+  }
+  return referencePointer;
 };
 
 /**
@@ -80,7 +93,7 @@ export const smartGet = (
  * @param childParam
  * @returns {boolean}
  */
-export let exists = function(parentObject, childParam: string): boolean {
+export let exists = (parentObject, childParam: string): boolean => {
   if (parentObject.hasOwnProperty(childParam)) {
     return true;
   }

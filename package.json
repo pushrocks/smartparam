@@ -2,7 +2,7 @@
   "name": "@pushrocks/smartparam",
   "version": "1.1.3",
   "private": false,
-  "description": "smart ways to handle params",
+  "description": "smart ways to handle parameters of objects",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -34,7 +34,9 @@
     "@gitzone/tsrun": "^1.2.8",
     "@gitzone/tstest": "^1.0.28",
     "@pushrocks/tapbundle": "^3.2.0",
-    "@types/node": "^13.5.3"
+    "@types/node": "^13.5.3",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "files": [
     "ts/**/*",

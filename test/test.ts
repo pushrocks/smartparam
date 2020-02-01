@@ -23,6 +23,19 @@ tap.test('should be able to deepAdd an childParam', async () => {
   expect(smartparam.exists(parentObject2.wow, 'za')).to.be.true;
 });
 
+tap.test('should be able to deep get an item', async () => {
+  const testObject = {
+    hey: {
+      there: {
+        so: 'cool'
+      }
+    }
+  };
+
+  const item = smartparam.smartGet(testObject, 'hey.there.so');
+  expect(item).to.equal('cool');
+});
+
 tap.test('should call properties for minimatched properties', async () => {
   let testObject = {
     matchedOne: 'Hey!',
