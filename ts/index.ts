@@ -82,7 +82,11 @@ export const smartGet = <T>(
 
   let referencePointer = parentObject;
   for (const level of paramLevels) {
-    referencePointer = referencePointer[level];
+    if (referencePointer[level]) {
+      referencePointer = referencePointer[level];
+    } else {
+      return null;
+    }
   }
   return referencePointer;
 };
